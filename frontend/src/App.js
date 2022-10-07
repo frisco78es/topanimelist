@@ -1,24 +1,26 @@
 import React from 'react';
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { unstable_HistoryRouter as HistoryRouter, useRoutes } from "react-router-dom";
+import { createBrowserHistory } from 'history';
 import { ApolloProvider, InMemoryCache, ApolloClient } from "@apollo/client";
-import Menu from './composant/Menu';
-import Home from "./page/Home"
+import MAP_ROUTES from "./routes";
 
 const client = new ApolloClient({
 	uri: 'http://localhost:3000',
 	cache: new InMemoryCache()
 });
 
+function AppRoutes() {
+	const routesElem = useRoutes(MAP_ROUTES);
+	return routesElem;
+}
+
 function App() {
 	return (
 		<div className="App">
 			<ApolloProvider client={client}>
-				<BrowserRouter>
-					<Routes>
-						<Route path="/app" element={<Home />} />
-					</Routes>
-				</BrowserRouter>
-				<Menu />
+				<HistoryRouter history={createBrowserHistory()}>
+					<AppRoutes />
+				</HistoryRouter>
 			</ApolloProvider>
 		</div>
 	);
