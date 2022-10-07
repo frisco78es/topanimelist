@@ -5,13 +5,10 @@ This project have for objectif to give me a simple tool to sort my anime from my
 Compatible with Anilist only
 https://anilist.co
 
-Requiring Automail extension to extract a JSON from your list
-https://github.com/hohMiyazawa/Automail
+MyAnimeList compatibility not intended but might exist in the future, stay tuned !
 
 ### How to use
 
 Start both Frontend and Backend by moving to both file and running indicated command
-
-Then drop your initial list file obtain with Automail to start the algorythme.
 
 Now Enjoy !
