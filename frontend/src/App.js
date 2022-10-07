@@ -5,7 +5,7 @@ import { ApolloProvider, InMemoryCache, ApolloClient } from "@apollo/client";
 import MAP_ROUTES from "./routes";
 
 const client = new ApolloClient({
-	uri: 'http://localhost:3000',
+	uri: 'http://localhost:4*000',
 	cache: new InMemoryCache()
 });
 
